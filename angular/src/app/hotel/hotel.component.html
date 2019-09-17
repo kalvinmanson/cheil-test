@@ -44,7 +44,11 @@
           <th>id</th>
           <td>{{ hotel.id }}</td>
           <th>User</th>
-          <td>{{ hotel.user.first_name + ' ' + hotel.user.last_name }}</td>
+          <td>
+            <span *ngIf="hotel.user">
+              {{ hotel.user.first_name + ' ' + hotel.user.last_name }}
+            </span>
+          </td>
         </tr>
         <tr>
           <th>Name</th>

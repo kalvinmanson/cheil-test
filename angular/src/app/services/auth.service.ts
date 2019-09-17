@@ -11,7 +11,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthService {
-  apiUrl = 'http://localhost:8000/api/';
+  apiUrl = 'https://cheil.droni.dev/api/';
 
   constructor(private http: HttpClient) { }
 

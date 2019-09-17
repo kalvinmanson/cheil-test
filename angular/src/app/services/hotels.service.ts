@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class HotelsService {
 
-  apiUrl = 'http://localhost:8000/api/';
+  apiUrl = 'https://cheil.droni.dev/api/';
   headers:any = null;
   userLogged:any = null;
 
