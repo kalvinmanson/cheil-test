@@ -12,12 +12,14 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
+import { HotelComponent } from './hotel/hotel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
-    UsersComponent
+    UsersComponent,
+    HotelComponent
   ],
   imports: [
     BrowserModule,

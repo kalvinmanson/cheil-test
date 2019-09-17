@@ -11,7 +11,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthService {
-  apiUrl = 'https://insoftar.droni.dev/api/';
+  apiUrl = 'http://localhost:8000/api/';
 
   constructor(private http: HttpClient) { }
 

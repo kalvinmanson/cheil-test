@@ -1,7 +1,7 @@
 <div class="container">
   <div class="card mb-3" *ngIf="newUser">
     <div class="card-header">
-      <button type="button" class="btn btn-default float-right" (click)="user = null">Close</button>
+      <button type="button" class="btn btn-default float-right" (click)="newUser = null">Close</button>
       Create User
     </div>
     <div class="card-body">
@@ -75,7 +75,10 @@
           <th>Created at</th>
           <td>{{ user.created_at }}</td>
           <th></th>
-          <td><button class="btn btn-danger" (click)="deleteUser(user.id)">Delete</button></td>
+          <td>
+            <p class="text-secondary" *ngIf="user.hotels.length > 0">Remove all hotels before delete user</p>
+            <button *ngIf="user.hotels.length == 0" class="btn btn-danger" (click)="deleteUser(user.id)">Delete</button>
+          </td>
         </tr>
       </table>
     </div>
@@ -94,6 +97,7 @@
           <th>Document</th>
           <th>Email</th>
           <th>Phone</th>
+          <th>Hotels</th>
           <th>Created At</th>
           <th></th>
         </tr>
@@ -103,6 +107,7 @@
           <td>{{ user.document }}</td>
           <td>{{ user.email }}</td>
           <td>{{ user.phone }}</td>
+          <td>{{ user.hotels.length }}</td>
           <td>{{ user.created_at }}</td>
           <td><button class="btn btn-success" (click)="getUser(user.id)">Details</button></td>
         </tr>

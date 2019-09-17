@@ -13,7 +13,7 @@ class UserController extends Controller
 {
   public function index()
   {
-    $users = User::orderBy('created_at', 'desc')->get();
+    $users = User::with('hotels')->orderBy('created_at', 'desc')->get();
     return response()->json($users);
   }
   public function store(Request $request)
@@ -40,7 +40,7 @@ class UserController extends Controller
   }
   public function show($id)
   {
-    $user = User::find($id);
+    $user = User::with('hotels')->find($id);
     if(!$user) { return response()->json(['message' => 'User not found.'], 404); }
     $user->save();
     return response()->json($user);

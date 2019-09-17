@@ -16,8 +16,7 @@ class AuthController extends Controller
         'email'       => 'required|string|email',
         'password'    => 'required|string',
     ]);
-    $credentials = request(['email', 'password']);
-
+    $credentials = $request->only('email', 'password');
     if (!Auth::attempt($credentials)) {
       return response()->json(['message' => 'Wrong email or password.'], 401);
     }

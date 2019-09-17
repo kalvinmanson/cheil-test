@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class UsersService {
+export class HotelsService {
 
   apiUrl = 'http://localhost:8000/api/';
   headers:any = null;
@@ -24,18 +24,18 @@ export class UsersService {
 
   list() {
     this.createHeaders();
-    return this.http.get(this.apiUrl +'users', this.headers);
+    return this.http.get(this.apiUrl +'hotels', this.headers);
   }
   show(id) {
     this.createHeaders();
-    return this.http.get(this.apiUrl +'users/'+id, this.headers);
+    return this.http.get(this.apiUrl +'hotels/'+id, this.headers);
   }
   store(user) {
     this.createHeaders();
-    return this.http.post(this.apiUrl +'users', user, this.headers);
+    return this.http.post(this.apiUrl +'hotels', user, this.headers);
   }
   destroy(id) {
     this.createHeaders();
-    return this.http.delete(this.apiUrl +'users/'+id, this.headers);
+    return this.http.delete(this.apiUrl +'hotels/'+id, this.headers);
   }
 }

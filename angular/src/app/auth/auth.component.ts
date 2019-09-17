@@ -36,9 +36,11 @@ export class AuthComponent implements OnInit {
       this.router.navigate(['/'])
     },e=>{
       let errorsMsj = '';
-      Object.entries(e.error.errors).forEach(function(error){
-        errorsMsj += '<br>'+error[1];
-      });
+      if(e.error.errors) {
+        Object.entries(e.error.errors).forEach(function(error){
+          errorsMsj += '<br>'+error[1];
+        });
+      }
       this.toastr.error(errorsMsj,e.error.message, {
         enableHtml: true
       });
